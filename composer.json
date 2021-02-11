@@ -6,11 +6,13 @@
   "type": "composer-plugin",
   "minimum-stability": "dev",
   "require": {
-    "composer-plugin-api": "^1.0"
+    "php": ">=7.1",
+    "composer-plugin-api": "^1.1 || ^2.0",
+    "composer/installers": "^1.0"
   },
   "autoload": {
     "psr-0": {
-      "zagovorichev\\composer\\": "./"
+      "Zagovorichev\\Composer\\": "./"
     }
   },
   "extra": {

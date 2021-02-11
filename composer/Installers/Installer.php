@@ -1,12 +1,13 @@
 <?php
 declare(strict_types=1);
 
-namespace zagovorichev\composer;
+namespace Zagovorichev\Composer\Installers;
 
 use Composer\Package\PackageInterface;
 use Composer\Installer\LibraryInstaller;
+use Composer\Installers\Installer as InstallerBase;
 
-class Installer extends LibraryInstaller
+class Installer extends InstallerBase
 {
     private const ENV_VENDOR_DIR_PATH = 'VENDOR_DIR_PATH';
     private const ENV_MODULES_DIR_PATH = 'MODULES_DIR_PATH';
@@ -125,19 +126,6 @@ class Installer extends LibraryInstaller
         return $packageName;
     }
 
-    private function getDefaultPath(PackageInterface $package): string
-    {
-        if (!$this->defaultPath) {
-            // default path
-            $targetDir = $package->getTargetDir();
-            $this->defaultPath = $this->getVendorDirPath() .
-                $package->getPrettyName() .
-                ($targetDir ? DIRECTORY_SEPARATOR . $targetDir : '');
-        }
-
-        return $this->defaultPath;
-    }
-
     /**
      * Install module to the right place
      */
@@ -147,6 +135,6 @@ class Installer extends LibraryInstaller
         if ($this->isModule($packageName)) {
             return $this->getModulesDirPath() . $this->getModuleName($packageName);
         }
-        return $this->getDefaultPath($package);
+        return LibraryInstaller::getInstallPath($package);
     }
 }
