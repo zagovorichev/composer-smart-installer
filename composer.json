@@ -27,7 +27,7 @@
     }
   },
   "extra": {
-    "class": "Zagovorichev\\Composer\\Installers\\Plugin"
+    "class": "Zagovorichev\\Composer\\Plugin"
   },
   "authors": [
     {
