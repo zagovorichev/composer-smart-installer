@@ -1,0 +1,25 @@
+{
+  "name": "zagovorichev/composer-smart-installer",
+  "description": "Correct folders installation",
+  "keywords": ["composer"],
+  "license": "MIT",
+  "type": "composer-plugin",
+  "minimum-stability": "dev",
+  "require": {
+    "composer-plugin-api": "^1.0"
+  },
+  "autoload": {
+    "psr-0": {
+      "zagovorichev\\composer\\": "./"
+    }
+  },
+  "extra": {
+    "class": "zagovorichev\\composer\\InstallPlugin"
+  },
+  "authors": [
+    {
+      "name": "Oleksandr Zagovorychev",
+      "email": "zagovorichev@gmail.com"
+    }
+  ]
+}
