@@ -23,11 +23,6 @@ class Installer extends InstallerBase
      */
     private string $modulesDirPath = '';
 
-    /**
-     * @var string default generated path for the lib
-     */
-    private string $defaultPath;
-
     private array $modules = [];
     private ?string $envVendorDirPath = null;
     private ?string $envModulesDirPath = null;
