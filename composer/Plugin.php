@@ -10,7 +10,7 @@ use Zagovorichev\Composer\Installers\Installer;
 
 class Plugin implements PluginInterface
 {
-    private Installer $installer;
+    private ?Installer $installer = null;
 
     private function getInstaller(Composer $composer, IOInterface $io): Installer
     {
